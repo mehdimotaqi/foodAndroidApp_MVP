@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:text="@string/app_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSearch"
+                android:layout_below="@id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Search..."
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:drawablePadding="10dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager_header"
+                android:foregroundGravity="center"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:layout_below="@id/cardSearch"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="150dp"/>
+
+            <include
+                android:id="@+id/shimmer_meal"
+                layout="@layout/item_view_page_header_shimmer"/>
+
+            <TextView
+                android:id="@+id/title_category"
+                android:text="Meal Category"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/view_pager_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_category"
+                android:scrollbars="none"
+                android:layout_below="@id/title_category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"/>
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
